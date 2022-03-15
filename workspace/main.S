@@ -1,9 +1,24 @@
-Start:
-	mov r1,	#10
-	mov r2, #30
-	add r0, r1, r2
-	b Function
-	lsr r0, r4, #1
+.org 0x00
+PARTIEA:
+mov r1,	#16
+mov r2, #31
 
-Function: 
-	mov r4, #100
+B PARTIEC
+
+.org 0x12
+PARTIEB:
+mov r1,	#10
+mov r2, #30
+mov r1,	#15
+mov r2, #30
+mov r1,	#16
+mov r2, #30
+	
+bne PARTIEC	
+B PARTIEA
+
+.org 0x024
+PARTIEC:
+mov r4, #60
+	 
+B PARTIEB
