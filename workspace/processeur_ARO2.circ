@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project integrity="f43f237b49d45c5e02950e7144f185956d1306a8" source="2.16.8.t" version="1.0">
+<project integrity="f8738997a291b4f8e2acd14e52f8126c48511ef6" source="2.16.8.t" version="1.0">
   This file is intended to be loaded by Logisim-evolution (https://github.com/reds-heig/logisim-evolution).
 
   <lib desc="#Wiring" name="0">
@@ -322,8 +322,8 @@ end TCL_Generic;
       <a name="addrWidth" val="15"/>
       <a name="dataWidth" val="16"/>
       <a name="contents">addr/data: 15 16
-2110 221f e00e 6*0 210a 221e 210f 221e
-2110 221e d101 e7ee 0 243c e7f4
+2005 2102 1842 1d13 e01a 27*0 2206 1e53
+d00c 13*0 2004 2180 e7cc
 </a>
       <a name="label" val="InstrMemory"/>
     </comp>
@@ -1734,7 +1734,7 @@ end TCL_Generic;
     </comp>
     <comp lib="0" loc="(160,400)" name="Constant">
       <a name="width" val="4"/>
-      <a name="value" val="0xf"/>
+      <a name="value" val="0x0"/>
     </comp>
     <comp lib="8" loc="(208,362)" name="Text">
       <a name="text" val="Temporary Constants"/>

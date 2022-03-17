@@ -3,34 +3,32 @@ main.o:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000028  00000000  00000000  00000034  2**1
+  0 .text         00000066  00000000  00000000  00000034  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00000000  00000000  0000005c  2**0
+  1 .data         00000000  00000000  00000000  0000009a  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          00000000  00000000  00000000  0000005c  2**0
+  2 .bss          00000000  00000000  00000000  0000009a  2**0
                   ALLOC
-  3 .ARM.attributes 00000014  00000000  00000000  0000005c  2**0
+  3 .ARM.attributes 00000014  00000000  00000000  0000009a  2**0
                   CONTENTS, READONLY
 
 Disassembly of section .text:
 
-00000000 <PARTIEA>:
-   0:	2110      	movs	r1, #16
-   2:	221f      	movs	r2, #31
-   4:	e00e      	b.n	24 <PARTIEC>
+00000000 <ADR_debut_prog>:
+   0:	2005      	movs	r0, #5
+   2:	2102      	movs	r1, #2
+   4:	1842      	adds	r2, r0, r1
+   6:	1d13      	adds	r3, r2, #4
+   8:	e01a      	b.n	40 <ADR_saut_1>
 	...
 
-00000012 <PARTIEB>:
-  12:	210a      	movs	r1, #10
-  14:	221e      	movs	r2, #30
-  16:	210f      	movs	r1, #15
-  18:	221e      	movs	r2, #30
-  1a:	2110      	movs	r1, #16
-  1c:	221e      	movs	r2, #30
-  1e:	d101      	bne.n	24 <PARTIEC>
-  20:	e7ee      	b.n	0 <PARTIEA>
+00000040 <ADR_saut_1>:
+  40:	2206      	movs	r2, #6
+  42:	1e53      	subs	r3, r2, #1
+  44:	d00c      	beq.n	60 <ADR_saut_2>
 	...
 
-00000024 <PARTIEC>:
-  24:	243c      	movs	r4, #60	; 0x3c
-  26:	e7f4      	b.n	12 <PARTIEB>
+00000060 <ADR_saut_2>:
+  60:	2004      	movs	r0, #4
+  62:	2180      	movs	r1, #128	; 0x80
+  64:	e7cc      	b.n	0 <ADR_debut_prog>
